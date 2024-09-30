@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class Nuela_Q1 {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the user
+        Scanner input = new Scanner(System.in);
+
+        // Input student information
+        System.out.print("Enter student name: ");
+        String studentName = input.nextLine();
+        
+        System.out.print("Enter course: ");
+        String course = input.nextLine();
+
+        System.out.print("Enter course code: ");
+        String courseCode = input.nextLine();
+
+        // Input number of units
+        System.out.print("Enter number of units (Maximum 10): ");
+        int numberOfUnits = input.nextInt();
+
+        // Calculate enrollment fee
+        int feePerUnit = 1000;
+        int totalEnrollmentFee = numberOfUnits * feePerUnit;
+
+        // Display enrollment fee
+        System.out.println("\nStudent Name: " + studentName);
+        System.out.println("Total Enrollment Fee: " + totalEnrollmentFee);
+
+        // Payment processing
+        System.out.print("\nEnter payment amount: ");
+        int paymentAmount = input.nextInt();
+
+        if (paymentAmount == totalEnrollmentFee) {
+            System.out.println("Fully Paid");
+        } else if (paymentAmount < totalEnrollmentFee) {
+            int remainingBalance = totalEnrollmentFee - paymentAmount;
+            System.out.println("Partial Payment. Remaining balance: " + remainingBalance);
+        } else {
+            System.out.println("Invalid payment amount.");
+        }
+
+        // Close the Scanner object
+        input.close();
+    }
+}
